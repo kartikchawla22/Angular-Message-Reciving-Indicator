@@ -10,8 +10,6 @@ export class ButtonComponent {
   @Input() type = '';
   @Output() buttonClickEmitter: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
-
   buttonClick() {
     this.buttonClickEmitter.emit();
   }

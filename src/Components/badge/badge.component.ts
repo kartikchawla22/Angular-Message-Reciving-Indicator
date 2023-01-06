@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { BadgeService } from '../../Services/badge.service';
 
 @Component({
@@ -7,8 +8,11 @@ import { BadgeService } from '../../Services/badge.service';
   styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent {
-  constructor(private _badgeSerice: BadgeService) {}
-  @Input() totalMessages: number = 0;
+  totalMessages$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
+  constructor(private _badgeSerice: BadgeService) {
+    this.totalMessages$ = this._badgeSerice.counter$;
+  }
 
   onBadgeClick() {
     this._badgeSerice.resetCounter();
