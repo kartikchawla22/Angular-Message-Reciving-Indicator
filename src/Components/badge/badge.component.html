@@ -1,3 +1,10 @@
-<button mat-icon-button color="primary" aria-label="Badge Counter">
-  <mat-icon matBadge="20" color="primary" matBadgeColor="warn">mail</mat-icon>
+<button
+  mat-icon-button
+  [matBadge]="totalMessages"
+  matBadgeColor="warn"
+  aria-label="Badge Counter"
+  [matBadgeHidden]="totalMessages === 0"
+  (click)="onBadgeClick()"
+>
+  <mat-icon>mail</mat-icon>
 </button>

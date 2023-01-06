@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BadgeService } from '../Services/badge.service';
 
 @Component({
   selector: 'my-app',
@@ -6,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  onRecieveClick() {
-    console.log('check');
+  constructor(private _badgeSerice: BadgeService) {}
+
+  onStartRecieveClick() {
+    this._badgeSerice.startrecieving();
+  }
+
+  onStopRecieveClick() {
+    this._badgeSerice.stopRecieving();
   }
 }
