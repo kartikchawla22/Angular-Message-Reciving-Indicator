@@ -1,4 +1,20 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container">
+  <div class="main-content">
+    <div class="badge-container">
+      <app-badge></app-badge>
+    </div>
+    <div class="buttons-container">
+      <app-button
+        title="Start receiving"
+        type="accent"
+        (buttonClickEmitter)="onRecieveClick()"
+      ></app-button>
+
+      <app-button
+        title="Stop receiving"
+        type="accent"
+        (buttonClickEmitter)="onRecieveClick()"
+      ></app-button>
+    </div>
+  </div>
+</div>
