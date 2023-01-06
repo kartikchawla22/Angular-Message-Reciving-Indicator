@@ -14,7 +14,7 @@ export class BadgeComponent {
     this.totalMessages$ = this._badgeSerice.counter$;
   }
 
-  onBadgeClick() {
+  onBadgeClick(): void {
     this._badgeSerice.resetCounter();
   }
 }

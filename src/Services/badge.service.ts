@@ -8,15 +8,15 @@ export class BadgeService {
   private _counterSubject$: Subscription;
   counter$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  startrecieving() {
+  startrecieving(): void {
     this._counterSubject$ = timer(0, 300).subscribe(() => {
       this.counter$.next(this.counter$.value + 1);
     });
   }
-  stopRecieving() {
+  stopRecieving(): void {
     this._counterSubject$.unsubscribe();
   }
-  resetCounter() {
+  resetCounter(): void {
     this.counter$.next(0);
   }
 }
