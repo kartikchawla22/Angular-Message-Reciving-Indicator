@@ -1,11 +1,10 @@
 <button
   mat-icon-button
+  (click)="onBadgeClick()"
   [matBadge]="totalMessages$ | async"
+  [matBadgeHidden]="(totalMessages$ | async) === 0"
   matBadgeColor="warn"
   aria-label="Badge Counter"
-  [matBadgeHidden]="(totalMessages$ | async) === 0"
-  (click)="onBadgeClick()"
-  color="primary"
 >
-  <mat-icon>mail</mat-icon>
+  <mat-icon>mail_outline</mat-icon>
 </button>

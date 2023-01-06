@@ -8,12 +8,14 @@
         title="Start receiving"
         type="primary"
         (buttonClickEmitter)="onStartRecieveClick()"
+        [isDisabled]="isRecieving"
       ></app-button>
 
       <app-button
         title="Stop receiving"
         type="accent"
         (buttonClickEmitter)="onStopRecieveClick()"
+        [isDisabled]="!isRecieving"
       ></app-button>
     </div>
   </div>
